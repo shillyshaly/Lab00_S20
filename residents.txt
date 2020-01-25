@@ -1,0 +1,36 @@
+Scott Adams:101
+Alfred Aho:102:AWK
+Paul Allen:103:BASIC
+Tim Berners-Lee:104:WWW
+Grady Booch:105:UML
+Stephen Bourne:201:BourneShell
+Vinton Cerf:202:TCP/IP
+Ward Cunningham:203:Wiki
+Edsger Dijkstra:204:DijkstraAlgorithm
+Brendan Eich:205:JavaScript
+Marc Ewing:301:RedHatLinux
+Adele Goldberg:302:Smalltalk
+James Gosling:303:Java
+David Albert Huffman:304:HuffmanCode
+Rebecca Heineman:305
+Grace Hopper:401:COBOL
+Brian Kernighan:402:AWK
+Leslie Lamport:403:LaTeX
+Rasmus Lerdof:404:PHP
+Ada Lovelace:405:firstProgrammer
+Yukihiro Matsumoto:501:Ruby
+Scott Meyers:502:C++
+Peter Naur:503:ALGOL60
+Kristen Nygaard:504:SIMULA
+Dennis Ritchie:505:C
+Guido van Rossum:601:Python
+Cliff Shaw:602:IPL
+Joel Spolsky:603:StackOverflow
+Gerald Jay Sussman:604:Scheme
+Niklaus Wirth:605:Pascal
+Mark Zuckerberg:701:Facebook
+Evan Spiegel:702:Snapchat
+Kevin Systrom:703:Instagram
+Jan Koum:704:WhatsApp
+Larry Page:705:Google
+Shel Silverstein:706

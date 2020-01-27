@@ -16,7 +16,7 @@ public class Resident {
      * @param password
      */
     public Resident(String name, String room, String password) {
-        //TODO - done
+        //TODO - DONE
         this.name = name;
         this.room = room;
         this.password = password;
@@ -28,7 +28,7 @@ public class Resident {
      * @return the value of name
      */
     public String getName() {
-        //TODO - done
+        //TODO - DONE
         return this.name; // THIS IS A STUB
     }
 
@@ -38,7 +38,7 @@ public class Resident {
      * @param name
      */
     public void setName(String name) {
-        //TODO - done
+        //TODO - DONE
         this.name = name;
     }
 
@@ -48,8 +48,8 @@ public class Resident {
      * @return the value of room
      */
     public String getRoom() {
-        //TODO - done
-        return room; // THIS IS A STUB
+        //TODO - DONE
+        return this.room; // THIS IS A STUB
     }
 
     /**
@@ -58,7 +58,7 @@ public class Resident {
      * @param room
      */
     public void setRoom(String room) {
-        //TODO - done
+        //TODO - DONE
         this.room = room;
     }
 
@@ -79,8 +79,8 @@ public class Resident {
      * @throws IllegalArgumentException
      */
     public void setPassword(String password) throws IllegalArgumentException {
-        //TODO - done
-        if (password.length() >= MIN_PASSWORD_LENGTH){
+        //TODO - DONE
+        if (password.length() >= MIN_PASSWORD_LENGTH) {
             this.password = password;
         }
     }
@@ -91,7 +91,7 @@ public class Resident {
      * @return the String object containing the resident information
      */
     public String toString() {
-        //TODO - done
-        return this.password +" "+ this.room +" "+ this.room; // THIS IS A STUB
+        //TODO - DONE
+        return "name: " + getName() + " room: " + getRoom()  + " password: " + getPassword();//THIS IS A STUB
     }
 }

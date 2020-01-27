@@ -11,7 +11,7 @@ public class Door {
      * default constructor, sets this.open to indicate the locked door
      */
     public Door() {
-        //TODO - done
+        //TODO - DONE
         this.open = LOCKED;
     }
 
@@ -21,8 +21,8 @@ public class Door {
      * @return the current value of this.open
      */
     public boolean isOpen() {
-        //TODO - done
-        return open;
+        //TODO - DONE
+        return this.open;
     }
 
     /**
@@ -30,7 +30,7 @@ public class Door {
      * sets the instance variable this.open to indicate the unlocked door
      */
     public void unlock() {
-        //TODO - done
+        //TODO - DONE
         this.open = UNLOCKED;
     }
 
@@ -39,7 +39,7 @@ public class Door {
      * sets the instance variable this.open to indicate the locked door
      */
     public void lock() {
-        //TODO - done
+        //TODO - DONE
         this.open = LOCKED;
     }
 
@@ -49,7 +49,7 @@ public class Door {
      * @return the String object containing the information if the door is locked or unlocked
      */
     public String toString() {
-        //TODO - in progress
-        return ("toString???"); // THIS IS A STUB
+        //TODO - DONE
+        return String.valueOf(isOpen()); // THIS IS A STUB
     }
 }

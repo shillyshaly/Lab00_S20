@@ -22,19 +22,26 @@ public class Dorm {
      *                 by the client
      */
     public Dorm(Scanner fromFile) {
-        //TODO - in progress(come back)
+        //TODO - in progress
         door = new Door();
         residents = new ArrayList<>();
 
-        try {
-            while(fromFile.hasNext()){
-                residents.add(new Resident(fromFile.next(),fromFile.next(), fromFile.next()));
+        while (fromFile.hasNext()) {
+
+            try {
+                String line = fromFile.nextLine();
+                String[] s = line.split(":");
+                if (s.length == 3) {
+                    Resident r = new Resident(s[0], s[1], s[2]);
+                    residents.add(r);
+                }
+            } catch (NoSuchElementException e) {
+                System.out.println("no such element: " + e.getMessage());
+            } catch (IllegalArgumentException e) {
+                System.out.println("illegal argument: " + e.getMessage());
             }
-        }catch (IllegalArgumentException e){
-        System.out.println("illegal argument: " + e.getMessage());
-        }catch (NoSuchElementException e){
-        System.out.println("no such element: " + e.getMessage());
         }
+
     }
 
     /**
@@ -44,10 +51,11 @@ public class Dorm {
      * @return the Resident object or null if not found
      */
     public Resident checkResident(String name) {
-        //TODO - in progress(come back)
-        if (residents.contains(name)){
+        //TODO - in progress (find what i have to return???)
+        if (residents.contains(name)) {
             return null;
-        }else{
+        }
+        else {
             return null;
         }
     }
@@ -57,8 +65,11 @@ public class Dorm {
      * uses for-each loop
      */
     public void displayResidentNames() {
-        //TODO
-
+        //TODO - DONE
+        System.out.println(residents.size());
+        for (Resident i : residents) {
+            System.out.println(i);
+        }
     }
 
     /**
@@ -76,6 +87,7 @@ public class Dorm {
      */
     public boolean validateAndUnlock(String name, String room, String password) {
         //TODO
+
         return false; // THIS IS A STUB
     }
 
@@ -83,7 +95,7 @@ public class Dorm {
      * asks the door object to lock itself
      */
     public void lockTheDoor() {
-        //TODO
-
+        //TODO - DONE
+        door.lock();
     }
 }

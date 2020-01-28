@@ -26,21 +26,25 @@ public class Dorm {
         door = new Door();
         residents = new ArrayList<>();
 
-        while (fromFile.hasNext()) {
-
-            try {
+        try {
+            while (fromFile.hasNext()) {
                 String line = fromFile.nextLine();
                 String[] s = line.split(":");
+
                 if (s.length == 3) {
                     Resident r = new Resident(s[0], s[1], s[2]);
                     residents.add(r);
                 }
-            } catch (NoSuchElementException e) {
-                System.out.println("no such element: " + e.getMessage());
-            } catch (IllegalArgumentException e) {
-                System.out.println("illegal argument: " + e.getMessage());
+                else {
+                    System.out.println("Missing data: " + line + "; Record Ignored.");
+                }
             }
+        } catch (NoSuchElementException e) {
+            System.out.println("no such element: " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("illegal argument: " + e.getMessage());
         }
+
 
     }
 
@@ -53,7 +57,7 @@ public class Dorm {
     public Resident checkResident(String name) {
         //TODO - in progress (find what i have to return???)
         if (residents.contains(name)) {
-            return null;
+            return new Resident(name,"null","null");
         }
         else {
             return null;

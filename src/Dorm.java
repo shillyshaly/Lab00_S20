@@ -12,7 +12,7 @@ public class Dorm {
     private Door door;
 
     /**
-     * the constructor creates the door object and the residents object.
+     * the constructor creates the door object and the residents object. -check
      * Reads from the file with the Scanner passed to the constructor and fills
      * the residents list with resident object based on the data retrieved from the file.
      * Must handle invalid data by catching IllegalArgumentException and  NoSuchElementException
@@ -27,24 +27,30 @@ public class Dorm {
         residents = new ArrayList<>();
 
         try {
-            while (fromFile.hasNext()) {
+            while (fromFile.hasNextLine()) {
                 String line = fromFile.nextLine();
                 String[] s = line.split(":");
 
-                if (s.length == 3) {
-                    Resident r = new Resident(s[0], s[1], s[2]);
-                    residents.add(r);
+                if (s.length != 3) {
+                    System.out.println("Missing data in record: " + line + "; record ignored");
                 }
                 else {
-                    System.out.println("Missing data: " + line + "; Record Ignored.");
-                }
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println("no such element: " + e.getMessage());
-        } catch (IllegalArgumentException e) {
-            System.out.println("illegal argument: " + e.getMessage());
-        }
+                    String name = s[0];
+                    String room = s[1];
+                    String password = s[2];
 
+                    Resident r = new Resident(name, room, password);
+                    residents.add(r);
+                }
+
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("illegal shit");
+            e.printStackTrace();
+        } catch (NoSuchElementException e) {
+            System.out.println("more illegal shit");
+            e.printStackTrace();
+        }
 
     }
 
@@ -55,13 +61,13 @@ public class Dorm {
      * @return the Resident object or null if not found
      */
     public Resident checkResident(String name) {
-        //TODO - in progress (find what i have to return???)
-        if (residents.contains(name)) {
-            return new Resident(name,"null","null");
+        //TODO - DONE
+        for (Resident r : residents) {
+            if (r.getName().equals(name)) {
+                return r;
+            }
         }
-        else {
-            return null;
-        }
+        return null;
     }
 
     /**

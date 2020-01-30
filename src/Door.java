@@ -50,6 +50,6 @@ public class Door {
      */
     public String toString() {
         //TODO - DONE
-        return String.valueOf(isOpen()); // THIS IS A STUB
+        return String.valueOf(isOpen());
     }
 }

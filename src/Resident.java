@@ -17,9 +17,9 @@ public class Resident {
      */
     public Resident(String name, String room, String password) {
         //TODO - DONE
-        this.name = name;
-        this.room = room;
-        this.password = password;
+        setName(name);
+        setRoom(room);
+        setPassword(password);
     }
 
     /**
@@ -29,7 +29,7 @@ public class Resident {
      */
     public String getName() {
         //TODO - DONE
-        return this.name; // THIS IS A STUB
+        return this.name;
     }
 
     /**
@@ -49,7 +49,7 @@ public class Resident {
      */
     public String getRoom() {
         //TODO - DONE
-        return this.room; // THIS IS A STUB
+        return this.room;
     }
 
     /**
@@ -92,6 +92,6 @@ public class Resident {
      */
     public String toString() {
         //TODO - DONE
-        return "name: " + getName() + " room: " + getRoom()  + " password: " + getPassword();//THIS IS A STUB
+        return "name: " + name + " room: " + room + " password: " + password;
     }
 }

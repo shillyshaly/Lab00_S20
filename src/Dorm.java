@@ -12,7 +12,7 @@ public class Dorm {
     private Door door;
 
     /**
-     * the constructor creates the door object and the residents object. -check
+     * the constructor creates the door object and the residents object.
      * Reads from the file with the Scanner passed to the constructor and fills
      * the residents list with resident object based on the data retrieved from the file.
      * Must handle invalid data by catching IllegalArgumentException and  NoSuchElementException
@@ -22,7 +22,7 @@ public class Dorm {
      *                 by the client
      */
     public Dorm(Scanner fromFile) {
-        //TODO - in progress
+        //TODO - needs debugging
         door = new Door();
         residents = new ArrayList<>();
 
@@ -45,10 +45,8 @@ public class Dorm {
 
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("illegal shit");
             e.printStackTrace();
         } catch (NoSuchElementException e) {
-            System.out.println("more illegal shit");
             e.printStackTrace();
         }
 
@@ -77,8 +75,8 @@ public class Dorm {
     public void displayResidentNames() {
         //TODO - DONE
         System.out.println(residents.size());
-        for (Resident i : residents) {
-            System.out.println(i);
+        for (Resident r : residents) {
+            System.out.printf(r.getName() + "; ");
         }
     }
 
@@ -96,9 +94,16 @@ public class Dorm {
      * credentials were entered
      */
     public boolean validateAndUnlock(String name, String room, String password) {
-        //TODO
-
-        return false; // THIS IS A STUB
+        //TODO - DONE
+        for (Resident r : residents) {
+            if (r.getName().equals(name) && r.getRoom().equals(room) && r.getPassword().equals(password)) {
+                door.unlock();
+                System.out.println("door is UNLOCKED");
+                return true;
+            }
+        }
+        System.out.println("door is LOCKED");
+        return false;
     }
 
     /**
